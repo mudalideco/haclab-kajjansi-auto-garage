@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #1A5C5C;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-accent: #D4893A;
+  --color-accent-foreground: #FFFFFF;
+
+  --color-background: #F7F4EE;
+  --color-foreground: #1A1A1A;
+
+  --color-surface: #FFFFFF;
+  --color-surface-foreground: #1A1A1A;
+
+  --color-muted: #E8E2D8;
+  --color-muted-foreground: #6B6358;
+
+  --color-border: #D4CCC0;
+  --color-ring: #1A5C5C;
+  --color-ring-offset: #F7F4EE;
+
+  --color-destructive: #C03E3E;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom cursor hide for Kinetic motion */
+html, * {
+  cursor: auto;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E8E2D8;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A5C5C;
+  border-radius: 4px;
 }
